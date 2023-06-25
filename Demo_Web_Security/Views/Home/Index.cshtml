@@ -7,7 +7,7 @@
 <div class="text-center">
     <h2>Chuyển tiền</h2>
     <h3 style="color:red">Số dư : @currentPrice</h3>
-    <form method="post" action="/Home/Transfer" asp-antiforgery="true">
+    <form method="post" action="/Home/Transfer" asp-antiforgery="false">
         <label>Từ tài khoản</label>
         <input type="number" id="accountFrom" name="accountFrom" required><br><br>
 

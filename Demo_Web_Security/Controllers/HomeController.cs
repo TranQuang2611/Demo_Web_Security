@@ -25,7 +25,7 @@ namespace Demo_Web_Security.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public IActionResult Transfer(TransferDTO dto)
         {
             currentMoney = currentMoney - dto.price;
