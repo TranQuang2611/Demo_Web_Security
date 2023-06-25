@@ -25,13 +25,36 @@ namespace Demo_Web_Security.Controllers
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult Transfer(TransferDTO dto)
         {
             currentMoney = currentMoney - dto.price;
             string mess = "Chuyển thành công số tiền " + dto.price + " từ tài khoản " + dto.accountFrom + " tới tài khoản " + dto.accountTo;
             ViewBag.mess = mess;
             ViewBag.price = currentMoney;
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Logon(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Privacy");
+            }
+            //return Redirect(returnUrl);
+        }
+
+        public IActionResult Newspaper()
+        {
             return View();
         }
 
