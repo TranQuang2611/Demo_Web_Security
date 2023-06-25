@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string mess = (string)ViewBag.mess;
+    int currentPrice = (int)ViewBag.price;
+}
+
+<div class="text-center">
+    <h2>Chuyển tiền</h2>
+    <h3 style="color:red">Số dư : @currentPrice</h3>
+    @if (!string.IsNullOrEmpty(mess))
+    {
+        <h4>@mess</h4>
+    }
+    <a href="/Home/Index">Tiếp tục chuyển tiền</a>
+</div>
+
+
